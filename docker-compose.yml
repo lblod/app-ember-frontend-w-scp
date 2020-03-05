@@ -2,9 +2,12 @@ version: "3.4"
 services:
   frontend:
     image: madnificent/ember:3.15.2
+    ports:
+      - "80:4200"
+      - "35729:35729"
     volumes:
       - ./frontend-rdfa-editor-demo:/app
-    command: "ember serve --proxy http://demo-backend.say-editor.com"
+    command: "ember serve --proxy http://demo-backend.say-editor.com --live-reload-port --live-reload-port 35729"
   sftp:
     image: atmoz/sftp
     volumes:
