@@ -4,7 +4,7 @@ services:
     image: madnificent/ember:3.15.2
     volumes:
       - ./frontend-rdfa-editor-demo:/app
-    command: "ember serve --proxy https://ob2020-backend-1.s.redpencil.io"
+    command: "ember serve --proxy http://demo-backend.say-editor.com"
   sftp:
     image: atmoz/sftp
     volumes:
