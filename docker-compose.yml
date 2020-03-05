@@ -1,0 +1,13 @@
+version: "3.4"
+services:
+  frontend:
+    image: madnificent/ember:3.15.2
+    volumes:
+      - ./frontend-rdfa-editor-demo:/app
+    command: "ember serve --proxy https://ob2020-backend-1.s.redpencil.io"
+  sftp:
+    image: atmoz/sftp
+    volumes:
+      - ./frontend-rdfa-editor-demo:/home/rdfa/frontend-rdfa-editor-demo
+    ports:
+      - "2222:22"
